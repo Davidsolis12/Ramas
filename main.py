@@ -58,13 +58,25 @@ class Agenda:
             for c in encontrados:
                 print(c)
 
+    def eliminar_contacto(self):
+        nombre = input("Nombre del contacto a eliminar: ")
+
+        for c in self.contactos:
+            if c.nombre.lower() == nombre.lower():
+                self.contactos.remove(c)
+                print("Contacto eliminado")
+                return
+
+        print("Contacto no encontrado")
+
     def menu(self):
         while True:
             print("\n--- AGENDA ---")
             print("1. Añadir contacto")
             print("2. Mostrar contactos")
             print("3. Buscar contacto")
-            print("4. Salir")
+            print("4. Eliminar contacto")
+            print("5. Salir")
 
             opcion = input("Elige una opción: ")
 
@@ -75,12 +87,13 @@ class Agenda:
             elif opcion == "3":
                 self.buscar_contacto()
             elif opcion == "4":
+                self.eliminar_contacto()
+            elif opcion == "5":
                 print("Hasta luego")
                 break
             else:
                 print("Opción inválida")
-
-
+                
 if __name__ == "__main__":
     agenda = Agenda()
     agenda.menu()
