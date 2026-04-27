@@ -36,6 +36,8 @@ class Agenda:
             print("❌ Email inválido")
             return
 
+        print("dsolpon@g.educaand.es")
+
         contacto = Contacto(nombre, telefono, email)
         self.contactos.append(contacto)
         print("✅ Contacto añadido")
